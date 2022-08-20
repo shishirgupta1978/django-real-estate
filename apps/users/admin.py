@@ -33,7 +33,7 @@ class UserAdmin(BaseUserAdmin):
        (
             _("Permissions and Groups"),
             {
-                "fields":("is_active","is_staff","is_sueruser","groups","user_permissions")
+                "fields":("is_active","is_staff","is_superuser","groups","user_permissions")
 
             },
         ),
