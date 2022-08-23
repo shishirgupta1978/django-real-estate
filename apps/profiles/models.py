@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
 from phonenumber_field.modelfields import PhoneNumberField
-import phonenumbers
+
 from apps.common.models import TimeStampUUIDModel
 
 # Create your models here.
@@ -18,6 +18,7 @@ class Gender(models.TextChoices):
     OTHER="Other",_("Other")
 
 class Profile(TimeStampUUIDModel):
+    
     user=models.OneToOneField(User,related_name="profile",on_delete=models.CASCADE)
     phone_number=PhoneNumberField(verbose_name=_("Phone Number"),max_length=30,null=True,blank=True)
     about_me=models.TextField(verbose_name=_("About me"),blank=True,null=True)
